@@ -1,0 +1,9 @@
+" in order to make your local setting works
+" copy this file and rename it as vimrc.local
+" add your vimrc configurations here
+
+" typescript高亮
+Plug 'leafgarland/typescript-vim'
+
+" 注释符号后面加一个空格
+let g:NERDSpaceDelims = 1
