@@ -8,11 +8,11 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +58 src/ts/view/bill.ts
-badd +80 src/ts/view/city.ts
+badd +24 src/ts/view/query.ts
+badd +56 src/ts/view/result.ts
 argglobal
 silent! argdel *
-edit src/ts/view/bill.ts
+edit src/ts/view/query.ts
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -29,20 +29,12 @@ setlocal fdn=20
 setlocal fen
 19
 normal! zo
-33
-normal! zo
-82
-normal! zo
-87
-normal! zo
-99
-normal! zo
-let s:l = 58 - ((33 * winheight(0) + 22) / 44)
+let s:l = 1 - ((0 * winheight(0) + 22) / 44)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-58
-normal! 016|
+1
+normal! 0
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

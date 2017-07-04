@@ -184,8 +184,8 @@ noremap <C-h> <C-W>h
 noremap <C-l> <C-W>l
 
 " Go to home and end using capitalized directions
-noremap H 0
-noremap L $
+" noremap H 0
+" noremap L $
 noremap Y y$
 
 " Remap VIM 0 to first non-blank character

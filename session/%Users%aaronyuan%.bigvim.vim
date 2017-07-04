@@ -10,7 +10,7 @@ endif
 set shortmess=aoO
 badd +355 vimrc.bundles
 badd +9 vimrc.local
-badd +0 vimrc
+badd +1 vimrc
 argglobal
 silent! argdel *
 edit vimrc
@@ -28,11 +28,11 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 150 - ((28 * winheight(0) + 22) / 45)
+let s:l = 147 - ((24 * winheight(0) + 22) / 44)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-150
+147
 normal! 0
 tabnext 1
 if exists('s:wipebuf')
