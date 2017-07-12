@@ -14,7 +14,7 @@ set autowriteall
 set ts=4
 autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
 
-
+" need npm install -g html-beautify pretter
 let g:neoformat_html_htmlbeautify = {
             \ 'exe': 'html-beautify',
             \ 'args': ['-A force-aligned', '-w 100']
