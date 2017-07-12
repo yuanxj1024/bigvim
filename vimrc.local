@@ -7,3 +7,6 @@ Plug 'leafgarland/typescript-vim'
 
 " 注释符号后面加一个空格
 let g:NERDSpaceDelims = 1
+" set autoread              " auto reload file after being modified
+" au CursorHold * checktime
+set autowriteall
