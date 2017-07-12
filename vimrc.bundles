@@ -374,7 +374,7 @@ let g:gundo_auto_preview = 0
 " vim-autoformat
 "require: npm install -g js-beautify
 " ----------------------------------------------------------------------------
-autocmd FileType javascript,json,html,css,scss noremap <buffer>  <leader><leader>f :Autoformat<cr>
+"autocmd FileType javascript,json,html,css,scss noremap <buffer>  <leader><leader>f :Autoformat<cr>
 
 " ----------------------------------------------------------------------------
 " vim-bbye
