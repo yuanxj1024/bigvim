@@ -142,8 +142,8 @@ inoremap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDow
 inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
 
 autocmd FileType python set tabstop=4 shiftwidth=4 expandtab ai
-" autocmd FileType javascript,json,css,scss,html set tabstop=2 shiftwidth=2 expandtab ai
-autocmd FileType javascript,json,css,scss,html set tabstop=4 shiftwidth=4 expandtab ai
+" autocmd FileType javascript,json,css,scss,html set tabstop=4 shiftwidth=4 expandtab ai
+"autocmd FileType * set tabstop=4 shiftwidth=4 expandtab ai
 
 
 autocmd BufReadPre * if getfsize(expand("%")) > 10000000 | syntax off | endif

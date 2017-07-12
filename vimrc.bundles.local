@@ -5,3 +5,5 @@
 " typescript高亮
 Plug 'leafgarland/typescript-vim'
 Plug 'djoshea/vim-autoread'
+Plug 'Shougo/neomru.vim'
+Plug 'sbdchd/neoformat'

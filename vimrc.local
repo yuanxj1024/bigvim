@@ -7,6 +7,33 @@ Plug 'leafgarland/typescript-vim'
 
 " 注释符号后面加一个空格
 let g:NERDSpaceDelims = 1
-" set autoread              " auto reload file after being modified
-" au CursorHold * checktime
+
 set autowriteall
+
+" 设置tab
+set ts=4
+autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
+
+
+let g:neoformat_html_htmlbeautify = {
+            \ 'exe': 'html-beautify',
+            \ 'args': ['-A force-aligned', '-w 100']
+            \ }
+let g:neoformat_typescript_prettier = {
+            \ 'exe': 'prettier',
+            \ 'args': ['--stdin', '--single-quote', '--parser typescript', '--trailing-comma none', '--tab-width 4', '--print-width 100'],
+            \ 'stdin': 1,
+            \ }
+
+let g:neoformat_javascript_prettier = {
+            \ 'exe': 'prettier',
+            \ 'args': ['--stdin', '--single-quote', '--trailing-comma none', '--tab-width 4', '--print-width 100'],
+            \ 'stdin': 1,
+            \ }
+let g:neoformat_enabled_html = ['htmlbeautify']
+let g:neoformat_enabled_javascript = ['prettier']
+let g:neoformat_enabled_typescript = ['prettier']
+
+
+nmap <leader>fo :Neoformat<cr>
+
