@@ -19,10 +19,11 @@ filetype plugin indent on
 syntax enable
 syntax on
 
-colorscheme gruvbox
+" colorscheme gruvbox
 "colorscheme solarized
 "colorscheme molokai
 "colorscheme desert
+colorscheme dracula
 
 set background=dark
 set t_Co=256
@@ -34,7 +35,7 @@ set noswapfile
 set cursorcolumn          " highlight current column
 set cursorline            " highlight current line
 set t_ti= t_te=           " alway show the content on the screen after exist VIM
-set mouse-=a              " disable mouse
+set mouse=a              " disable mouse
 set selection=inclusive   "set selection=exclusive
 set selectmode=mouse,key
 set title                 " change the terminal's title
@@ -161,8 +162,9 @@ nnoremap <silent> ) g,
 "replace currently selected text with default register without yanking it
 vnoremap p "_dP
 
+" set clipboard=unnamed
 " use ctrl-c to copy to system clipboard
-vnoremap <C-c> "*y
+vnoremap <C-c> *y
 
 " use <C-V> to paste yanked content
 inoremap <C-V> <C-R>"
@@ -213,7 +215,7 @@ nnoremap <silent> g* g*zz
 
 "Use 'm/M' to move among buffers
 noremap m :bn<CR>
-noremap M :bp<CR>
+noremap t :bp<CR>
 
 " remap U to <C-r> for easier redo
 nnoremap U <C-r>
@@ -225,7 +227,7 @@ nnoremap dp :diffput<CR>
 nnoremap dg :diffget<CR>
 
 " toggle between two buffers
-nnoremap t <C-^>
+" nnoremap t <C-^>
 
 "" Vmap for maintain Visual Mode after shifting > and <
 vnoremap < <gv

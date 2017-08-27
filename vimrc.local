@@ -4,6 +4,8 @@
 
 " typescript高亮
 Plug 'leafgarland/typescript-vim'
+Plug 'wakatime/vim-wakatime'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 " 注释符号后面加一个空格
 let g:NERDSpaceDelims = 1
@@ -13,6 +15,7 @@ set autowriteall
 " 设置tab
 set ts=4
 autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
+" autocmd FileType less setomnifunc=csscomplete#CompleteCSS
 
 " need npm install -g html-beautify pretter
 let g:neoformat_html_htmlbeautify = {
@@ -34,6 +37,6 @@ let g:neoformat_enabled_html = ['htmlbeautify']
 let g:neoformat_enabled_javascript = ['prettier']
 let g:neoformat_enabled_typescript = ['prettier']
 
-
-nmap <leader>fo :Neoformat<cr>
+" 文件格式化
+nmap <leader>ff :Neoformat<cr>
 

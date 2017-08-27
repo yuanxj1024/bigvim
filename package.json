@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "global": "^4.3.2",
-    "html-beautify": "^1.0.4",
-    "prettier": "^1.5.2"
-  }
-}

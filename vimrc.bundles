@@ -80,6 +80,7 @@ Plug 'vim-scripts/BufOnly.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'tomasr/molokai'
 Plug 'morhetz/gruvbox'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 " search
 Plug 'ctrlpvim/ctrlp.vim'
@@ -379,9 +380,9 @@ let g:gundo_auto_preview = 0
 " ----------------------------------------------------------------------------
 " vim-bbye
 " ----------------------------------------------------------------------------
-nnoremap qq :Bdelete<cr>
+nnoremap tt :Bdelete<cr>
 
 " ----------------------------------------------------------------------------
 " BufOnly.vim
 " ----------------------------------------------------------------------------
-nnoremap <silent> qo :BufOnly<CR>
+nnoremap <silent> to :BufOnly<CR>
