@@ -18,6 +18,7 @@
     "complete_strings": {},
     "angular": {},
     "modules": {},
-    "es_modules": {}
+    "es_modules": {},
+    "vue": {}
   }
 }

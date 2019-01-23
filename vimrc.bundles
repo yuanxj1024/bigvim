@@ -57,7 +57,9 @@ Plug 'christoomey/vim-sort-motion'
 Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
 if s:vim8
     Plug 'w0rp/ale'
-    let g:airline_section_error = '%{ALEGetStatusLine()}'
+    " let g:airline_section_error = '%{ALEGetStatusLine()}'
+
+    let g:airline_section_error = '%{exists("ALEGetStatusLine") ? ALEGetStatusLine() : ""}'
 else
     Plug 'scrooloose/syntastic'
 endif
@@ -94,10 +96,10 @@ Plug 'rking/ag.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'marijnh/tern_for_vim', {'do': 'npm install'}
 Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'kchmck/vim-coffee-script'
+" Plug 'kchmck/vim-coffee-script'
 Plug 'heavenshell/vim-jsdoc', {'for': ['javascript','jsx','typescript']}
-Plug 'burnettk/vim-angular'
-Plug 'mxw/vim-jsx'
+" Plug 'burnettk/vim-angular'
+" Plug 'mxw/vim-jsx'
 
 " PHP
 if count(g:bigvim_minor_plugins, 'php')
@@ -105,7 +107,7 @@ if count(g:bigvim_minor_plugins, 'php')
     Plug 'mkusher/padawan.vim', {'for': 'php'}
     Plug 'ruanyl/vim-php-manual', {'for': 'php'}
     Plug 'shawncplus/phpcomplete.vim', {'for': 'php'}
-    Plug 'fantasyczl/blade-php-vim'
+    " Plug 'fantasyczl/blade-php-vim'
 endif
 
 " CSS
@@ -141,13 +143,14 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 let g:tagbar_type_javascript = {
     \ 'ctagsbin' : 'jsctags'
     \ }
-nnoremap <leader>t :TagbarToggle<CR>
-let g:tagbar_autofocus = 1
-let g:tagbar_width = 50
+" nnoremap <leader>t :TagbarToggle<CR>
+" let g:tagbar_autofocus = 1
+" let g:tagbar_width = 50
 
 " ----------------------------------------------------------------------------
 " ctrlp.vim
 " ----------------------------------------------------------------------------
+nnoremap f :CtrlP<CR>
 nnoremap <leader>m :CtrlPMRU<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
 let g:ctrlp_custom_ignore = {
@@ -212,7 +215,7 @@ nnoremap <Leader>x :BookmarkClearAll<CR>
 " ----------------------------------------------------------------------------
 " vim-maximizer
 " ----------------------------------------------------------------------------
-nnoremap <tab> :MaximizerToggle<CR>
+" nnoremap <tab> :MaximizerToggle<CR>
 
 " ----------------------------------------------------------------------------
 " vim-colors-solarized
@@ -319,7 +322,6 @@ let g:syntastic_style_warning_symbol='•'
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_highlighting = 0
 let g:syntastic_javascript_checkers = ['tslint', 'tsc']
-" let g:syntastic_typescript_tslint_args = "--config ~/Documents/working/pay-ifee/tslint.json"
 
 if executable('eslint_d')
     let g:syntastic_javascript_eslint_exec = 'eslint_d'

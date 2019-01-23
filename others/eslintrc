@@ -10,6 +10,6 @@
   },
   "rules": {
     "no-use-before-define": [2, "nofunc"],
-    "space-before-function-paren": [2, "never"]
+    "space-before-function-paren": [4, "never"]
   }
 }

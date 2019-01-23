@@ -7,3 +7,6 @@ Plug 'leafgarland/typescript-vim'
 Plug 'djoshea/vim-autoread'
 Plug 'sbdchd/neoformat'
 Plug 'wakatime/vim-wakatime'
+
+" Vue
+Plug 'posva/vim-vue'

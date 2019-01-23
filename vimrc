@@ -4,6 +4,7 @@
 " ----------------------------------------------------------------------------
 
 set nocompatible
+set lazyredraw
 
 "Load plugins
 if filereadable(expand("~/.vim/vimrc.before"))
@@ -19,9 +20,10 @@ filetype plugin indent on
 syntax enable
 syntax on
 
+" 主题
 " colorscheme gruvbox
 "colorscheme solarized
-"colorscheme molokai
+" colorscheme molokai
 "colorscheme desert
 colorscheme dracula
 
@@ -46,7 +48,7 @@ set tm=500
 set nostartofline         " keep cursor postion when switching between buffers
 
 set number " show line number
-set nowrap " disable wrap
+set wrap " disable wrap
 
 "set list
 "set listchars=tab:›\ ,trail:•,extends:❯,precedes:❮
@@ -67,9 +69,9 @@ set foldlevel=99
 set smartindent       " Do smart autoindenting when starting a new line
 set autoindent        " always set autoindenting on
 
-set tabstop=4         " Number of spaces that a <Tab> in the file counts for.
-set shiftwidth=4      " number of spaces to use for autoindenting
-set softtabstop=4     " Number of spaces that a <Tab> counts for while performing editing operations
+set tabstop=3        " Number of spaces that a <Tab> in the file counts for.
+set shiftwidth=2      " number of spaces to use for autoindenting
+set softtabstop=2    " Number of spaces that a <Tab> counts for while performing editing operations
 set smarttab
 set expandtab         " when typing <Tab>, use <space> instead
 set shiftround        " use multiple of shiftwidth when indenting with '<' and '>'
@@ -82,7 +84,7 @@ set relativenumber " show relative line number
 set ruler          " show the current line number and column number
 set showcmd        " show the current typing command
 set noshowmode     " Show current mode
-set scrolloff=7    " Set 7 lines to the cursor - when moving vertically using j/k
+set scrolloff=3    " Set 7 lines to the cursor - when moving vertically using j/k
 
 " File encode:encode for varied filetype
 set encoding=utf-8
@@ -142,9 +144,9 @@ inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
 inoremap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDown>"
 inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
 
-autocmd FileType python set tabstop=4 shiftwidth=4 expandtab ai
-" autocmd FileType javascript,json,css,scss,html set tabstop=4 shiftwidth=4 expandtab ai
-"autocmd FileType * set tabstop=4 shiftwidth=4 expandtab ai
+" autocmd FileType python set tabstop=4 shiftwidth=4 expandtab ai
+autocmd FileType javascript,json,css,scss,html set tabstop=4 shiftwidth=4 expandtab ai
+autocmd FileType * set tabstop=4 shiftwidth=4 expandtab ai
 
 
 autocmd BufReadPre * if getfsize(expand("%")) > 10000000 | syntax off | endif
@@ -159,6 +161,8 @@ command! W w !sudo tee % > /dev/null
 nnoremap <silent> ( g;
 nnoremap <silent> ) g,
 
+
+"  ### 剪切板的处:
 "replace currently selected text with default register without yanking it
 vnoremap p "_dP
 
@@ -215,7 +219,7 @@ nnoremap <silent> g* g*zz
 
 "Use 'm/M' to move among buffers
 noremap m :bn<CR>
-noremap t :bp<CR>
+noremap T :bp<CR>
 
 " remap U to <C-r> for easier redo
 nnoremap U <C-r>
@@ -261,6 +265,7 @@ highlight clear SpellRare
 highlight SpellRare term=underline cterm=underline
 highlight clear SpellLocal
 highlight SpellLocal term=underline cterm=underline
+
 
 "Load local settings
 if filereadable(expand("~/.vim/vimrc.local"))
